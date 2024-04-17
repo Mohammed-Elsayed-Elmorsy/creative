@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.circles{
+    /* overflow: hidden; */
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -130px;
+    bottom: 0;
+    right: 0;
+}
+.circle{
+    background-image: linear-gradient(to top , rgb(255, 72, 0) , rgb(255, 145, 0),rgb(255, 208, 0));
+    box-shadow:  0 0 29px rgb(243, 227, 4);
+    opacity: 0.3 !important;
+}
+
+.circle2{
+    background-image: linear-gradient(to top , rgb(2, 180, 224) , rgb(255, 230, 0));
+    /* box-shadow:  0 0 29px rgb(210, 233, 1); */
+}
+.circle3{
+    background-image: linear-gradient(to top , rgb(2, 224, 187) , rgb(0, 174, 255));
+
+}
+.circle4{
+    background-image: linear-gradient(to top , rgb(226, 185, 2) , rgb(255, 0, 0));
+
+}
+
+.moon{
+    background-image: linear-gradient(to top , rgb(255, 255, 255) , rgb(3, 175, 228),rgb(0, 140, 255));
+    opacity: 0.3 !important;
+    box-shadow:  0 0 29px rgb(194, 194, 194);
+
+}
+ .bg-mine2{
+    width: 0;
+    transition: 0.6s;
+    left: 0;
+}
+.robot{
+    position: relative;
+    /* background-image: linear-gradient(to right , rgb(255, 102, 0) , rgb(255, 238, 0),rgb(0, 119, 128)); */
+}
+.robot::after{
+    position: absolute;
+    content: '';
+    width: 0px;
+    background-color: rgba(44, 44, 44, 0.808);
+    height: 1px;
+    top: 2px;
+    left: -20%;
+    z-index: 40;
+    transition: 0.6s;
+}
+.robot::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    background-color: rgba(43, 43, 43, 0.808);
+    height: 0%;
+    top: 2px;
+    left: -15%;
+    transition: 0.9s;
+    z-index: 40;
+}
+.robot:hover::after{
+    width: 20%;
+    /* background-color: rgba(56, 56, 56, 0.959); */
+
+} 
+.robot:hover::before{
+    height: 50%;
+    /* background-color: rgba(58, 57, 57, 0.986); */
+
+}
+
+.robot:hover .bg-mine2{
+    width: 50%;
+    left: -20%;
+}
+.robot:hover .bg-mine1{
+    width: 1px;
+    left: -20%;
+}
+.robot-div{
+    width: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.bg-mine{
+    transition: 0.4s;
+    width: 0;
+}
+
+.robot-div2{
+    height: 0;
+    transition: 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+}
+.robot:hover .robot-div {
+    width: 130px;
+    cursor: pointer;
+}
+.robot:hover .robot-div2 {
+    height: 130px;
+}
+.loader {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent #FF3D00 #FF3D00;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+    }
+    
+    @keyframes rotation {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(360deg);
+        }
+    } 
+        
+    @keyframes rotationBack {
+        0% {
+        transform: rotate(0deg);
+        }
+        100% {
+        transform: rotate(-360deg);
+        }
+    }
+        
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(330px,1fr));
+        gap: 20px;
+    }
+    .grid-container >div{
+        background-color: rgb(14, 20, 20,0.7);
+        box-shadow:  0 0 10px rgb(8, 8, 8);
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .grid-container >div img{
+        opacity: 0;
+        transition: 0.3s;
+    }
+    .grid-container >div:hover img{
+        opacity: 0.3;
+    }
+    .grid-container >div h3{
+        color: white;
+        font-size: 22px;
+    }
+
+    .grid-container >div button{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .grid-container >div p{
+        color: gray;
+    }
+
+
+    form{
+        box-shadow: 0 0 10px rgb(10, 10, 10);
+        border-radius: 10px;
+    }
+    form div div{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    form div div input{
+        background-color: transparent;
+        border: 1px solid #353535;
+        padding: 8px 12px;
+        color: rgb(211, 211, 211);
+        outline: 0;
+        border-radius: 10px;
+    }
+    form div div input::placeholder{
+        color: #414141;
+    }
+    form div div label{
+        color: rgb(189, 189, 189);
+        font-weight: bold;
+    }
